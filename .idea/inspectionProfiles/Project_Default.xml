@@ -1,0 +1,100 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="10">
+            <item index="0" class="java.lang.String" itemvalue="," />
+            <item index="1" class="java.lang.String" itemvalue="name" />
+            <item index="2" class="java.lang.String" itemvalue="errormsg" />
+            <item index="3" class="java.lang.String" itemvalue="color-on-scroll" />
+            <item index="4" class="java.lang.String" itemvalue="viewbox" />
+            <item index="5" class="java.lang.String" itemvalue="fa-file-pdf" />
+            <item index="6" class="java.lang.String" itemvalue="far" />
+            <item index="7" class="java.lang.String" itemvalue="aria-dismiss" />
+            <item index="8" class="java.lang.String" itemvalue="_blank" />
+            <item index="9" class="java.lang.String" itemvalue="target" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="14">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="div" />
+            <item index="7" class="java.lang.String" itemvalue="ion-icon" />
+            <item index="8" class="java.lang.String" itemvalue="hr" />
+            <item index="9" class="java.lang.String" itemvalue="h6" />
+            <item index="10" class="java.lang.String" itemvalue="option" />
+            <item index="11" class="java.lang.String" itemvalue="th" />
+            <item index="12" class="java.lang.String" itemvalue="p" />
+            <item index="13" class="java.lang.String" itemvalue="alert-with-icon" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="dj-database-url" />
+            <item index="1" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="2" class="java.lang.String" itemvalue="idna" />
+            <item index="3" class="java.lang.String" itemvalue="django-pipbootstrap4-form" />
+            <item index="4" class="java.lang.String" itemvalue="markdownpipf" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E302" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="bpmdoc.core.erp.urls.*" />
+          <option value="config.db_bpmdoc" />
+          <option value="bpmdoc.core.erp.models.Changecontrol.names" />
+          <option value="super.*" />
+          <option value="bpmdoc.config.settings.DJANGO_SETTINGS_MODULE" />
+          <option value="bpmpro.config.settings.*" />
+          <option value="django.forms.forms.CharField" />
+          <option value="core.erp.models.LOAN_STATUS" />
+          <option value="object.dispatch" />
+          <option value="core.erp.views.changes.views.request" />
+          <option value="core.erp.views.changes.views.render" />
+          <option value="dict.success" />
+          <option value="dict.append" />
+          <option value="dict.errors" />
+          <option value="core.erp.views.inicio.views.get_logo" />
+          <option value="dict.__getitem__" />
+          <option value="datetime.datetime.datetime" />
+          <option value="core.noconform.models.CaPa" />
+          <option value="bool.capitalize" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
