@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>BPMPro</title>
+    <title>{{ title }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -35,30 +35,20 @@
     ======================================================== -->
 </head>
 
-<body>
-
 {% include 'header.html' %}
 
-{% block content_home %}
-
-{% endblock %}
-
+<body>
 <main id="main">
+    {% block content %}
 
-    {% include 'features.html' %}
 
-{#    {% include 'testimonials.html' %}#}
 
-{#    {% include 'products.html' %}#}
 
-{#    {% include 'price.html' %}#}
 
-{#    {% include 'faq.html' %}#}
 
-    {% include 'contact.html' %}
 
+    {% endblock %}
 </main>
-
 {% include 'footer.html' %}
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

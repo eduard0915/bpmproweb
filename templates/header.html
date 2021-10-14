@@ -12,7 +12,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a class="nav-link scrollto" href="#hero">Inicio</a></li>
+            <li><a class="nav-link scrollto" href="{{ url_for('home') }}">Inicio</a></li>
             <li><a class="nav-link scrollto" href="#about">Características</a></li>
             <li><a class="nav-link scrollto" href="#features">Módulos</a></li>
 {#          <li><a class="nav-link scrollto " href="#">Productos</a></li>#}
@@ -34,7 +34,7 @@
 {#              <li><a href="#">Drop Down 4</a></li>#}
 {#            </ul>#}
 {#          </li>#}
-          <li><a class="nav-link scrollto" href="#contact">Contáctenos</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('contact') }}">Contáctenos</a></li>
 {#          <li><a class="getstarted scrollto" href="">Iniciar Sesión</a></li>#}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

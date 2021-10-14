@@ -16,9 +16,10 @@
         </div>
         <div class="col-lg-6">
           <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#" class="scrollto">Inicio</a>
-          {# <a href="#" class="scrollto">Acerca de BPMPro</a> #}
-            <a href="#" class="scrollto">Caraterísticas</a>
+            <a href="{{ url_for('home') }}" class="scrollto">Inicio</a>
+            <a href="{{ url_for('home') }}" class="scrollto">Caraterísticas</a>
+            <a href="{{ url_for('home') }}" class="scrollto">Módulos</a>
+            <a href="{{ url_for('contact') }}" class="scrollto">Contáctenos</a>
 {#            <a href="#">Privacy Policy</a>#}
 {#            <a href="#">Terms of Use</a>#}
           </nav>
