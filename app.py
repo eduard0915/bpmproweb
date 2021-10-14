@@ -4,7 +4,7 @@ from  flask_mail import Mail, Message
 
 
 app = Flask(__name__)
-# app.secret_key = config()
+
 
 @app.route('/')
 def home():
@@ -44,5 +44,5 @@ def contact():
     return render_template('contact2.html', title=title)
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+     app.run()
