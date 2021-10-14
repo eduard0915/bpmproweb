@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    title = 'BPMPro'
+    return render_template('home.html', title=title)
 
 
 app.config['SECRET_KEY'] = config('SECRET_KEY')
