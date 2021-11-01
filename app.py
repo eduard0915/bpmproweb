@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    title = 'BPMPro'
+    title = 'BPM Pro'
     return render_template('home.html', title=title)
 
 
