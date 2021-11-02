@@ -6,11 +6,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>{{ title }}</title>
-    <meta content="Software para BPM y Gestión de Calidad" name="description">
-    <meta content="BPM, Buenas Practicas de Manufactura, Calidad, Cosmeticos, Fitoterapeuticos, INVIMA, Certificación, Gestión Documental" name="keywords">
+    <meta content="Software de Gestión Documental, Calidad y Buenas Practicas de Manufactura" name="description">
+    <meta property="og:description" content="BPM, Buenas Practicas de Manufactura, Calidad, Cosmeticos, Fitoterapeuticos, INVIMA, Certificación, Gestión Documental" name="keywords">
     <meta property="og:image" content="https://i.ibb.co/XSdM2mr/bpm.jpg"/>
     <meta property="og:url" content="https://bpmpro.co/"/>
     <meta property="og:type" content="website"/>
+    <meta property="og:title" content="{{ title }}"/>
+    <meta name="robots" content="noindex, follow">
 
     <!-- Favicons -->
     <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
@@ -32,6 +34,8 @@
     <!-- Template Main CSS File -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
+    <link rel="canonical" href="https://bpmpro.co/" />
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SHYK6KJT1"></script>
     <script>
@@ -40,6 +44,34 @@
       gtag('js', new Date());
 
       gtag('config', 'G-1SHYK6KJT1');
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Gestión Documental",
+            "url": "https://bpmpro.co/",
+            "image": "https://bpmpro.co/static/img/bpmpro.svg",
+            "description": "Software de gestión documental, calidad y buenas practicas de manufactura",
+            "brand": "BPMPro",
+            "review": {
+                "@type": "Review",
+                "name": "Ciel Technology SAS",
+                "reviewBody": "CielTechno SAS",
+                "datePublished": "2021-11-01",
+                "author": {
+                    "@type": "Person",
+                    "name": "Ciel Technology SAS"
+                }
+            },
+            "sameAs": [
+                "https://twitter.com/bpmpro_software/",
+                "https://www.linkedin.com/showcase/bpmpro/",
+                "https://www.facebook.com/bpmprosoftware/",
+                "https://www.instagram.com/bpmprosoftware/"
+            ]
+        }
     </script>
 
     <!-- =======================================================

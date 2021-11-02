@@ -1,14 +1,20 @@
 from decouple import config
 from flask import Flask, render_template, request, flash
-from  flask_mail import Mail, Message
+from flask_mail import Mail, Message
 
 
 app = Flask(__name__)
 
 
+@app.errorhandler(404, '/404')
+def page_not_found(e):
+    title = 'Página No Encontrada'
+    return render_template('404.html', title=title), 404
+
+
 @app.route('/')
 def home():
-    title = 'BPM Pro'
+    title = 'BPMPro - Gestión Documental, Calidad para BPM'
     return render_template('home.html', title=title)
 
 
@@ -45,4 +51,4 @@ def contact():
 
 
 if __name__ == '__main__':
-     app.run()
+    app.run()
