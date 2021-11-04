@@ -6,7 +6,8 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 
 
-@app.errorhandler(404, '/404')
+@app.errorhandler(404)
+@app.route('/404')
 def page_not_found(e):
     title = 'Página No Encontrada'
     return render_template('404.html', title=title), 404

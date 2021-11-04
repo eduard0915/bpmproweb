@@ -4,7 +4,7 @@
 
       <div class="logo">
         <a>
-            <img src="{{ url_for('static', filename='img/bpmpro.svg') }}" alt="bpm">
+            <img src="{{ url_for('static', filename='img/bpmpro.svg') }}" width="643.5" height="133.4" alt="bpm">
         </a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="home.html"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
@@ -12,9 +12,15 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-            <li><a class="nav-link scrollto" href="{{ url_for('home') }}">Inicio</a></li>
-            <li><a class="nav-link scrollto" href="#about">Características</a></li>
-            <li><a class="nav-link scrollto" href="#features">Módulos</a></li>
+            {% if url_for('contact') in request.path %}
+                <li><a class="nav-link scrollto" href="{{ url_for('home') }}">Inicio</a></li>
+                <li><a class="nav-link scrollto" href="{{ url_for('home') }}">Características</a></li>
+                <li><a class="nav-link scrollto" href="{{ url_for('home', class=features) }}">Módulos</a></li>
+            {% else %}
+                <li><a class="nav-link scrollto" href="{{ url_for('home') }}">Inicio</a></li>
+                <li><a class="nav-link scrollto" href="#about">Características</a></li>
+                <li><a class="nav-link scrollto" href="#features">Módulos</a></li>
+            {% endif %}
 {#          <li><a class="nav-link scrollto " href="#">Productos</a></li>#}
 {#          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>#}
 {#          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>#}
