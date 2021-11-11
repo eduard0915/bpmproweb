@@ -44,7 +44,7 @@ def contact():
                       recipients=[config('MAIL_RECIPIENTS')]
                       )
         mail.send(msg)
-        success_message = 'Su mensaje se ha enviado satisfactoriamente'
+        success_message = 'Su mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted'
         flash(success_message)
         render_template('contact2.html', success=True)
     title = 'BPMPro - Contáctenos'
