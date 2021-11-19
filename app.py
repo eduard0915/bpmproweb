@@ -40,8 +40,8 @@ def contact():
         mail = Mail(app)
         msg = Message(subject=subject,
                       body=f'Nombre cliente: {name}\nE-mail: {email}\nTelefóno: {phone}\n\n\n{message}',
-                      sender=config('MAIL_USERNAME'),
-                      recipients=[config('MAIL_RECIPIENTS')]
+                      sender='bpmpro.noreply@gmail.com',
+                      recipients=['ciel.techno@gmail.com']
                       )
         mail.send(msg)
         success_message = 'Su mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted'
