@@ -10,7 +10,7 @@
                 new Date().getTime(), event: 'gtm.js'
         });
         var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : '';
         j.async = true;
         j.src =
             'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
@@ -55,12 +55,31 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SHYK6KJT1"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'G-1SHYK6KJT1');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 876961996 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-876961996"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'AW-876961996');
+    </script>
+
+    <!-- Event snippet for Contacto conversion page -->
+    <script>
+        gtag('event', 'conversion', {'send_to': 'AW-876961996/ZMfZCIuz1IgDEMzBlaID'});
     </script>
 
     <script type="application/ld+json">
@@ -71,7 +90,6 @@
             "url": "https://bpmpro.co/",
             "image": "https://bpmpro.co/static/img/bpmpro.svg",
             "description": "Software de gestión documental, calidad y buenas practicas de manufactura",
-            "brand": "BPMPro",
             "review": {
                 "@type": "Review",
                 "name": "Ciel Technology SAS",
@@ -81,6 +99,10 @@
                     "@type": "Person",
                     "name": "Ciel Technology SAS"
                 }
+            },
+            "brand": {
+                "@type": "Brand",
+                "name": "BPMPro"
             },
             "sameAs": [
                 "https://twitter.com/bpmpro_software/",
