@@ -67,7 +67,7 @@ def submit():
         return redirect(url_for('contact'))
     else:
         flash('Error!! Confirmar ReCaptcha')
-        return redirect(url_for('conctact'))
+        return redirect(url_for('contact'))
 
 
 if __name__ == '__main__':
