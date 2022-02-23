@@ -59,7 +59,8 @@ def contact():
             render_template('contact2.html', success=True)
         else:
             flash('Error!! Confirmar ReCaptcha')
-            return redirect(url_for('contact'))
+            # return redirect(url_for('contact'))
+            render_template('contact2.html', success=False)
     title = 'BPMPro - Contáctenos'
     return render_template('contact2.html', title=title)
 
