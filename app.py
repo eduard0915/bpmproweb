@@ -39,35 +39,39 @@ def home():
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        email = request.form.get('email')
-        phone = request.form.get('phone')
-        message = request.form.get('message')
-        subject = request.form.get('subject')
+    if recaptcha.verify():
+        if request.method == 'POST':
+            name = request.form.get('name')
+            email = request.form.get('email')
+            phone = request.form.get('phone')
+            message = request.form.get('message')
+            subject = request.form.get('subject')
 
-        mail = Mail(app)
-        msg = Message(subject=subject,
-                      body=f'Nombre cliente: {name}\nE-mail: {email}\nTelefóno: {phone}\n\n\n{message}',
-                      sender='bpmpro.noreply@gmail.com',
-                      recipients=['ciel.techno@gmail.com']
-                      )
-        mail.send(msg)
-        success_message = 'Su mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted'
-        flash(success_message)
-        render_template('contact2.html', success=True)
+            mail = Mail(app)
+            msg = Message(subject=subject,
+                          body=f'Nombre cliente: {name}\nE-mail: {email}\nTelefóno: {phone}\n\n\n{message}',
+                          sender='bpmpro.noreply@gmail.com',
+                          recipients=['ciel.techno@gmail.com']
+                          )
+            mail.send(msg)
+            success_message = 'Su mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted'
+            flash(success_message)
+            render_template('contact2.html', success=True)
+        else:
+            flash('Error!! Confirmar ReCaptcha')
+            return redirect(url_for('contact'))
     title = 'BPMPro - Contáctenos'
     return render_template('contact2.html', title=title)
 
 
-@app.route('/submit', methods=['POST'])
-def submit():
-    if recaptcha.verify():
-        # flash('New Device Added successfully')
-        return redirect(url_for('contact'))
-    else:
-        flash('Error!! Confirmar ReCaptcha')
-        return redirect(url_for('contact'))
+# @app.route('/submit', methods=['POST'])
+# def submit():
+#     if recaptcha.verify():
+#         # flash('New Device Added successfully')
+#         return redirect(url_for('contact'))
+#     else:
+#         flash('Error!! Confirmar ReCaptcha')
+#         return redirect(url_for('contact'))
 
 
 if __name__ == '__main__':
