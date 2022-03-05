@@ -9,7 +9,7 @@ recaptcha = ReCaptcha(app=app)
 app.config.update(dict(
     RECAPTCHA_ENABLED=True,
     RECAPTCHA_SITE_KEY=config('RECAPTCHA_SITE_KEY'),
-    RECAPTCHA_SECRET_KEY=config(' RECAPTCHA_SECRET_KEY'),
+    RECAPTCHA_SECRET_KEY=config('RECAPTCHA_SECRET_KEY'),
 ))
 
 recaptcha = ReCaptcha()
@@ -37,45 +37,10 @@ def home():
     return render_template('home.html', title=title)
 
 
-# @app.route('/contact', methods=['GET', 'POST'])
-# def contact():
-#     if request.method == 'POST':
-#         name = request.form.get('name')
-#         email = request.form.get('email')
-#         phone = request.form.get('phone')
-#         message = request.form.get('message')
-#         subject = request.form.get('subject')
-#
-#         mail = Mail(app)
-#         msg = Message(subject=subject,
-#                       body=f'Nombre cliente: {name}\nE-mail: {email}\nTelefóno: {phone}\n\n\n{message}',
-#                       sender='bpmpro.noreply@gmail.com',
-#                       recipients=['ciel.techno@gmail.com']
-#                       )
-#         mail.send(msg)
-#         flash(
-#             'Mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted',
-#             'info')
-#         render_template('contact2.html', success=True)
-#     title = 'BPMPro - Contáctenos'
-#     return render_template('contact2.html', title=title)
-#
-#
-# @app.route('/submit', methods=['POST'])
-# def submit():
-#     if recaptcha.verify():
-#         flash(
-#             'Mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted',
-#             'info')
-#         return redirect(url_for('contact'))
-#     else:
-#         flash('Error: Confirmar ReCaptcha!!', 'danger')
-#         return redirect(url_for('contact'))
-
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    if recaptcha.verify():
-        if request.method == 'POST':
+    if request.method == 'POST':
+        if recaptcha.verify():
             name = request.form.get('name')
             email = request.form.get('email')
             phone = request.form.get('phone')
@@ -93,21 +58,11 @@ def contact():
                 'Mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted',
                 'info')
             render_template('contact2.html', success=True)
-    else:
-        flash('Error: Confirmar ReCaptcha!!', 'danger')
-        return redirect(url_for('contact'))
+        else:
+            flash('Error: Confirmar ReCaptcha!!', 'danger')
+            return redirect(url_for('contact'))
     title = 'BPMPro - Contáctenos'
     return render_template('contact2.html', title=title)
-# @app.route('/submit', methods=['POST'])
-# def submit():
-#     if recaptcha.verify():
-#         flash(
-#             'Mensaje se ha enviado satisfactoriamente, uno de nuestros representantes se comunicará con usted',
-#             'info')
-#         return redirect(url_for('contact'))
-#     else:
-#         flash('Error: Confirmar ReCaptcha!!', 'danger')
-#         return redirect(url_for('contact'))
 
 
 if __name__ == '__main__':
