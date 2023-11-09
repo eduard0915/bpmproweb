@@ -2,14 +2,11 @@
 
 {% block content %}
 
-    <!-- ======= Contact Section ======= -->
     <section id="contact" name="contact" class="contact" style="padding-top: 120px; border-top:60px">
         <div class="container">
-
             <div class="section-title" data-aos="fade-up">
                 <h2>Contáctenos</h2>
             </div>
-
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="contact-about">
@@ -88,10 +85,13 @@
                             <textarea class="form-control" name="message" rows="5" placeholder="Mensaje"
                                       required></textarea>
                         </div>
-                        {{ xcaptcha }}
-                        <br>
-                        <div class="text-center">
-                            <button type="submit">Enviar</button>
+                        <div class="row">
+                            <div class="col-md-7">
+                                {{ xcaptcha }}
+                            </div>
+                            <div class="col-md-5 text-md-center">
+                                <button type="submit">Enviar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
