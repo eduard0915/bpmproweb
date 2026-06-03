@@ -16,11 +16,6 @@ app.config['XCAPTCHA_VERIFY_URL'] = "https://hcaptcha.com/siteverify"
 app.config['XCAPTCHA_API_URL'] = "https://hcaptcha.com/1/api.js"
 app.config['XCAPTCHA_DIV_CLASS'] = "h-captcha"
 
-# app.config.update(dict(
-#     XCAPTCHA_SITE_KEY=config('RECAPTCHA_SITE_KEY'),
-#     XCAPTCHA_SECRET_KEY=config('RECAPTCHA_SECRET_KEY'),
-# ))
-
 xcaptcha = XCaptcha(app=app)
 
 app.config['SECRET_KEY'] = config('SECRET_KEY')
@@ -29,6 +24,7 @@ app.config['MAIL_PORT'] = config('MAIL_PORT')
 app.config['MAIL_USE_TLS'] = config('MAIL_USE_TLS')
 app.config['MAIL_USERNAME'] = config('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = config('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = config('EMAIL_HOST_USER')
 
 mail = Mail(app)
 
@@ -66,7 +62,7 @@ def contact():
                           body=f'Nombre cliente: {name}, \nCargo: {cargo}, \nEmpresa: {company}, \nE-mail: {email}'
                                f'\nTeléfono: {phone}\n\n\n{message}',
                           sender=config('MAIL_USERNAME'),
-                          recipients=[config('MAIL_RECIPIENTES')]
+                          recipients=[config('MAIL_RECIPIENTS')]
                           )
             mail.send(msg)
             flash(
